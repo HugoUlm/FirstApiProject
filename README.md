@@ -1,3 +1,4 @@
-# FirstApiProject
+# First API-project
 
-# WPF-app that fetches recipies from API.
+First API-project using C#. Very simple application.
+WPF-app that fetches recipies from API.
