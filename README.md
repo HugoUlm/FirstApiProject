@@ -1,5 +1,5 @@
 # First API-project
 
-First API-project using C#. Very simple application.
+First API-project using C#. 
 
-WPF-app that fetches recipies from API.
+A very basic WPF-app that fetches recipies from API
