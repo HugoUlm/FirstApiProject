@@ -1,0 +1,44 @@
+﻿<Page x:Class="Presentation.Views.SearchViewPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Presentation.Views"
+      xmlns:viewModels="clr-namespace:Presentation.ViewModels"
+      xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="700">
+
+    <Page.DataContext>
+        <ObjectDataProvider ObjectType="viewModels:SearchViewModel"/>
+    </Page.DataContext>
+    
+    <Grid Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <StackPanel Orientation="Horizontal">
+                <MaterialDesign:PackIcon Kind="Search" Height="23" Width="33" Margin="0,20"/>
+                <TextBox MaterialDesign:HintAssist.Hint="Search..." Margin="0,15" FontFamily="Tahoma" FontWeight="Normal" Text="{Binding SearchText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>            
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <DataGrid AutoGenerateColumns="False" Background="LightGray" ItemsSource="{Binding ApiList}" GridLinesVisibility="All" IsReadOnly="False" CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding title}"/>
+                    <DataGridTextColumn Header="Time to make (minutes)" Binding="{Binding readyInMinutes}"/>
+                    <DataGridTextColumn Header="Number of servings" Binding="{Binding servings}"/>
+                    <DataGridTextColumn Header="URL of recipe" Binding="{Binding sourceUrl}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+        
+
+    </Grid>
+</Page>
