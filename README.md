@@ -2,4 +2,4 @@
 
 First API-project using C#. 
 
-A very basic WPF-app that fetches recipies from API
+A very basic WPF-app that fetches recipies from API.
